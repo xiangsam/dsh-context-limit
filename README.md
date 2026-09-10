@@ -20,6 +20,32 @@ dsh plugin --profile web add "$(pwd)"
 
 已在 dsh `0.1.5-alpha.2` 上验证：loader 行 `context-limit` 正常激活，`GET/POST /dsh-context-limit` 返回当前模型窗口与设置结果。
 
+## DSH 兼容性
+
+| dsh 版本 | 状态 |
+| --- | --- |
+| `0.1.5-alpha.2` | **已验证** — loader 行激活、`/dsh-context-limit` 读写、compose 通过 |
+| 其它 `0.1.x` | 支持窗口（`>=0.1.1-rc.1 <0.2.0-0`），未测试 |
+| 其它版本 | 不支持 |
+
+插件在启动时读取当前 dsh 版本，超出窗口时打印 error 级日志；但**不会**阻止
+启动，保证信息可读。插件对缺失的服务全部走 `ctx.get()` 防御式读取，取不到就
+安静退出，不会像早期版本那样把 plugin tree 卡住。同样的声明写在包清单的
+`dsh.compatibility` 字段里。
+
+## 发布
+
+改 `package.json` 的 `version` 并提交后打 tag：
+
+```bash
+git tag "v$(node -p "require('./package.json').version")"
+git push origin main --tags
+```
+
+`.github/workflows/publish.yml` 会校验 tag 与 `package.json` 一致，并用
+workflow 的 `GITHUB_TOKEN` 发布到 GitHub Packages。也可以在 Actions 页面手动
+触发并开启 `dry_run`，只验证不发布。
+
 ## 这次 DSH 起不来，实际是什么
 
 `~/Library/Logs/DSH Desktop/harness.log` 里最近一次启动失败是：
