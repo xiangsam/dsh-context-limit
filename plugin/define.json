@@ -1,0 +1,5 @@
+{
+  "name": "Context Limit Slider",
+  "purpose": "Add a composer icon that opens a discrete context-window slider, capped at the current model's native maximum.",
+  "plugin": { "kind": "new", "idPrefix": "ctx" }
+}

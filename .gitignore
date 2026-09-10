@@ -1,0 +1,7 @@
+# Dependencies and local artifacts
+node_modules/
+*.tgz
+
+# Local tooling / OS noise
+.DS_Store
+*.log
