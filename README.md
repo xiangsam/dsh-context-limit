@@ -9,7 +9,7 @@
 ```bash
 npm login --registry=https://npm.pkg.github.com
 npm config set @xiangsam:registry https://npm.pkg.github.com
-dsh plugin --profile web add "@xiangsam/dsh-context-limit@0.1.0"
+dsh plugin --profile web add "@xiangsam/dsh-context-limit@0.1.1"
 ```
 
 从本仓库源码安装（改完 `lib/` 后重跑即可，`link:` 方式生效）：

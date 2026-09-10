@@ -1,6 +1,6 @@
 {
   "name": "@xiangsam/dsh-context-limit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "DeepSeek Harness composer context-window slider, capped at the current model's native maximum (dsh 0.1.x; verified on 0.1.5-alpha.2)",
   "repository": {
     "type": "git",
