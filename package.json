@@ -1,7 +1,7 @@
 {
   "name": "@xiangsam/dsh-context-limit",
-  "version": "0.1.1",
-  "description": "DeepSeek Harness composer context-window slider, capped at the current model's native maximum (dsh 0.1.x; verified on 0.1.5-alpha.2)",
+  "version": "0.2.0",
+  "description": "DeepSeek Harness composer context-window slider, capped at the current model's native maximum (dsh 0.2.x; verified on 0.2.0-rc.2)",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/xiangsam/dsh-context-limit.git"
@@ -25,9 +25,9 @@
     },
     "compatibility": {
       "tested": [
-        "0.1.5-alpha.2"
+        "0.2.0-rc.2"
       ],
-      "range": ">=0.1.1-rc.1 <0.2.0-0"
+      "range": ">=0.1.1-rc.1 <0.3.0-0"
     }
   },
   "keywords": [
@@ -35,7 +35,7 @@
     "dsh-plugin",
     "deepseek-harness",
     "context-window",
-    "dsh-0.1.5-alpha.2"
+    "dsh-0.2.0-rc.2"
   ],
   "publishConfig": {
     "registry": "https://npm.pkg.github.com",
