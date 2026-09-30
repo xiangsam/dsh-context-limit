@@ -9,7 +9,7 @@
 ```bash
 npm login --registry=https://npm.pkg.github.com
 npm config set @xiangsam:registry https://npm.pkg.github.com
-dsh plugin --profile web add "@xiangsam/dsh-context-limit@0.1.1"
+dsh plugin --profile web add "@xiangsam/dsh-context-limit@0.2.0"
 ```
 
 从本仓库源码安装（改完 `lib/` 后重跑即可，`link:` 方式生效）：
@@ -18,14 +18,15 @@ dsh plugin --profile web add "@xiangsam/dsh-context-limit@0.1.1"
 dsh plugin --profile web add "$(pwd)"
 ```
 
-已在 dsh `0.1.5-alpha.2` 上验证：loader 行 `context-limit` 正常激活，`GET/POST /dsh-context-limit` 返回当前模型窗口与设置结果。
+已在 dsh `0.2.0-rc.2` 上适配兼容声明（此前在 `0.1.5-alpha.2` 验证过同一套 host/client 钩子）。
 
 ## DSH 兼容性
 
 | dsh 版本 | 状态 |
 | --- | --- |
-| `0.1.5-alpha.2` | **已验证** — loader 行激活、`/dsh-context-limit` 读写、compose 通过 |
-| 其它 `0.1.x` | 支持窗口（`>=0.1.1-rc.1 <0.2.0-0`），未测试 |
+| `0.2.0-rc.2` | **目标 / 已适配** — compatibility、版本门与文档已对齐 |
+| `0.1.5-alpha.2` | 先前已验证 — loader、`/dsh-context-limit`、compose |
+| 其它 `0.1.x` / `0.2.x` | 支持窗口（`>=0.1.1-rc.1 <0.3.0-0`），未逐一测试 |
 | 其它版本 | 不支持 |
 
 插件在启动时读取当前 dsh 版本，超出窗口时打印 error 级日志；但**不会**阻止
